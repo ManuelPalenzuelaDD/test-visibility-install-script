@@ -177,7 +177,7 @@ install_python_tracer() {
   fi
 
   echo "PYTHONPATH=$dd_trace_path:$coverage_path:$PYTHONPATH"
-  echo "PYTEST_ADDOPTS=--ddtrace $PYTEST_ADDOPTS"
+  echo "PYTEST_ADDOPTS=\"--ddtrace $PYTEST_ADDOPTS\""
 
   echo "DD_TRACER_VERSION_PYTHON=$(pip show ddtrace | grep Version | cut -d ' ' -f2)"
 
