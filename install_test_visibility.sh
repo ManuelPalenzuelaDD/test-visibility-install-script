@@ -118,7 +118,7 @@ install_js_tracer() {
   local dd_trace_ci_init_path="$ARTIFACTS_FOLDER/lib/node_modules/dd-trace/ci/init"
   local dd_trace_register_path="$ARTIFACTS_FOLDER/lib/node_modules/dd-trace/register.js"
   if ! is_github_actions; then
-    echo "NODE_OPTIONS=$NODE_OPTIONS -r $dd_trace_ci_init_path"
+    echo "NODE_OPTIONS=\"$NODE_OPTIONS -r $dd_trace_ci_init_path\""
   else
     echo "DD_TRACE_PACKAGE=$dd_trace_ci_init_path"
   fi
